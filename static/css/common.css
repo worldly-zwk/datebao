@@ -1,0 +1,16 @@
+@font-face{
+    font-family:iconfont;src:url(../font/font_vzru737q95xko6r.eot);
+    src:url(../font/font_vzru737q95xko6r.eot?#iefix) format('embedded-opentype'),
+        url(../font/font_vzru737q95xko6r.woff) format('woff'),
+        url(../font/font_vzru737q95xko6r.ttf) format('truetype'),
+        url(../font/font_vzru737q95xko6r.svg#iconfont) format('svg')
+}
+.iconfont{
+    font-family:iconfont;
+    font-size:20px;
+}
+.ilist:before{
+    content:'\e6b0';
+    font-family:iconfont;
+    color: #ff8300
+}

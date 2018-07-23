@@ -8,6 +8,7 @@ import Element from '../components/element'
 import Find from '../components/find'
 import User from '../components/user'
 import Bscroll from '../components/bettr'
+import Map from '../components/Map'
 
 Vue.use(Router)
 
@@ -37,6 +38,11 @@ export default new Router({
             path:"/bettr",
             name:"bettr",
             component:Bscroll
+        },
+        {
+            path: "/map",
+            name:"map",
+            component: Map
         }
     ],
 	mode: 'history'

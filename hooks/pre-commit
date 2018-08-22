@@ -3,6 +3,6 @@ files=`git diff --cached --name-only | grep src`
 if [[ -z ${files} ]]; then
 	echo -e "\033[36m文件没有发生变化\033[0m"
 else	
-	npm run lint
+	./node_modules/.bin/eslint --ext .js,.vue src --fix
 fi;
 exit $?;

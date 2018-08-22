@@ -1,0 +1,8 @@
+#!/bin/bash
+files=`git diff --name-only | grep src`
+if [[ -z ${files} ]]; then
+	echo -e "\033[36m文件没有发生变化\033[0m"
+else	
+	npm run lint > /dev/null
+fi;
+exit $?;

@@ -1,5 +1,5 @@
 export default {
-    active (content){
-
-    }
-}
+	active (content){
+		console.log(content);
+	}
+};

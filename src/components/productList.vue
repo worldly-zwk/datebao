@@ -1,52 +1,63 @@
 <template>
-    <div class="box">
-        <div style="height:10px" v-show="loadingShow"></div>
-        <img src="../assets/loading.gif" class="loading"  v-show="loadingShow"/>
-        <p class="loadingText" v-show="loadingShow">{{loadingText}}</p>
-         <div class="list-first" v-if="list[0]">
-             <img :src="list[0].list_img_url_app" class="pic"/> 
-            <div class="con">
-                 <h3>{{list[0].local_product_name}}<span>({{list[0].product_sales_volume}}人已购买)</span></h3> 
-                <div class="con-box">
-                     <p class="tips">{{list[0].features}}</p> 
-                    <p class="price-box">
-                         <span class="price"><em>{{list[0].display_price_float}}</em>元</span> 
-                         <span class="origin"> 原价{{list[0].original_price.slice(0,2)}}元</span> 
-                    </p>
-                </div>
-            </div>
-        </div> 
-         <div class="list" v-for="item in list.slice(1)" v-if="list">
-            <img :src="item.list_img_url_app" alt="" class="pic">
-            <div class="con">
-                <h3>{{item.local_product_name}}</h3>
-                <div class="con-box">
-                    <p class="tips">{{item.features}}</p>
-                    <p class="flag-box"><span v-for="item in item.productCategoryArr" class="vux-1px">{{item}}</span></p>
-                    <p class="price-box">
-                        <span class="price"><em>{{item.display_price_float}}</em>元</span>
-                        <span class="origin"> 原价{{item.original_price.slice(0,2)}}元</span>
-                        <span class="price-right">售出{{item.product_sales_volume}}份</span>
-                    </p>
-                </div>
-            </div>
-        </div> 
-    </div>
+	<div class="box">
+		<div style="height:10px" v-show="loadingShow"></div>
+		<img src="../assets/loading.gif" class="loading" v-show="loadingShow">
+		<p class="loadingText" v-show="loadingShow">{{ loadingText }}</p>
+		<div class="list-first" v-if="list[0]">
+			<img :src="list[0].list_img_url_app" class="pic"> 
+			<div class="con">
+				<h3>{{ list[0].local_product_name }}<span>({{ list[0].product_sales_volume }}人已购买)</span></h3> 
+				<div class="con-box">
+					<p class="tips">{{ list[0].features }}</p> 
+					<p class="price-box">
+						<span class="price"><em>{{ list[0].display_price_float }}</em>元</span> 
+						<span class="origin"> 原价{{ list[0].original_price.slice(0,2) }}元</span> 
+					</p>
+				</div>
+			</div>
+		</div> 
+		<div class="list" v-for="item in list.slice(1)"	v-if="list">
+			<img :src="item.list_img_url_app" alt="" class="pic">
+			<div class="con">
+				<h3>{{ item.local_product_name }}</h3>
+				<div class="con-box">
+					<p class="tips">{{ item.features }}</p>
+					<p class="flag-box">
+						<span v-for="item in item.productCategoryArr" class="vux-1px">{{ item }}</span>
+					</p>
+					<p class="price-box">
+						<span class="price"><em>{{ item.display_price_float }}</em>元</span>
+						<span class="origin"> 原价{{ item.original_price.slice(0,2) }}元</span>
+						<span class="price-right">售出{{ item.product_sales_volume }}份</span>
+					</p>
+				</div>
+			</div>
+		</div> 
+	</div>
 </template>
 
 <script>
     
-    export default {
-        data (){
-            return {
-                loadingText:"众保险正努力赶来…"
-            }
-        },
-        props:["loadingShow","list"],
-        mounted (){
-            console.log(this.list)
-        }
-    }
+export default {
+	data (){
+		return {
+			loadingText:"众保险正努力赶来…"
+		};
+	},
+	props: {
+		loadingShow: {
+			type: Boolean,
+			default: true
+		},
+		list: {
+			type: Array,
+			default: null
+		}
+	},
+	mounted (){
+		console.log(this.list);
+	}
+};
 </script>
 
 <style scoped>

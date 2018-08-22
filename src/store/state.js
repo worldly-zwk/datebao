@@ -1,3 +1,3 @@
 export default{
-    tabbarInd:0
-}
+	tabbarInd:0
+};

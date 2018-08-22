@@ -1,5 +1,5 @@
 export default {
-    tabbar (state,ind){
-        state.tabbarInd=ind;
-    }
-}
+	tabbar (state,ind){
+		state.tabbarInd=ind;
+	}
+};
